@@ -3,7 +3,7 @@ const express = require("express");
 
 const path = require("path");
 const cors = require("cors");
-const { Stats } = require("fs");
+
 
 
 
@@ -28,9 +28,9 @@ app.use(cors())
 
 // application
 
-app.use("/", express.static(path.join(__dirname, "../client/build")));
+app.use("/", express.static(path.join(__dirname, "./build")));
   app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+    res.sendFile(path.join(__dirname, "./build", "index.html"));
   });
   app.get("/login", (req, res) => {
     res.json({Stats:"success",message:"clear cache"})
