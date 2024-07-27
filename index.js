@@ -30,7 +30,7 @@ app.use("/", express.static(path.join(__dirname, "./build")));
     res.sendFile(path.join(__dirname, "./build", "index.html"));
   });
   app.get("/login", (req, res) => {
-    res.json({Stats:"success",message:"clear cache"})
+    res.json({Stats:"success",message:process.env.PORT})
   });
 //Server
 app.listen(1338, () => {
